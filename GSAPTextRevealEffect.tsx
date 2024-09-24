@@ -13,13 +13,11 @@ const RevealText: React.FC<RevealTextProps> = ({ children, className }) => {
     const textRef = useRef<HTMLDivElement | null>(null);
     const [words, setWords] = useState<string[]>([]);
 
-    // Split text into words
     useEffect(() => {
         const splitWords = children.split(' ');
         setWords(splitWords);
     }, [children]);
 
-    // Apply GSAP animation on words
     useEffect(() => {
         if (!textRef.current) return;
 
